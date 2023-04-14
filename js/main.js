@@ -1,6 +1,6 @@
 // *****variabile km*****
 
-let numeroKm = parseInt(prompt("Quanti chilometri vuoi percorrere?"));
+// let numeroKm = parseInt(prompt("Quanti chilometri vuoi percorrere?"));
 // console.log("I chilometri da percorrere sono", typeof numeroKm);
 
 
@@ -11,7 +11,7 @@ if (isNaN(numeroKm)) {
 } else {  
 
 // ***Dichiaro la variabile eta passegero
-    let etaPasseggero = parseInt(prompt("Quanti anni hai?"));
+    // let etaPasseggero = parseInt(prompt("Quanti anni hai?"));
     // console.log("L'età passeggero è", typeof etaPasseggero);
 
     if (isNaN(etaPasseggero)) {
