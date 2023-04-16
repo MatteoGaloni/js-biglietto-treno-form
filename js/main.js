@@ -16,43 +16,51 @@ generator.addEventListener("click", function (e) {
 
     age = parseInt(age)
 
-    let total= 0;
+    let total;
+    let carrozza = Math.floor( Math.random() * 10 ) + 1;
+    let codice = Math.floor( Math.random() * 1000 ) + 1;
 
 
-    if (!km) {
-        alert("nessun dato inserito")
+    if (!name) {
+        alert("Attenzione, nessun nome inserito!")
+    } else if (!km) {
+        alert("Attenzione, distanza in chilometri non inserita!")
+    } else if (!age) { 
+        alert("Attenzione, nessuna età inserita!")
     } else {
-
-        if (!age) {
-            alert("nessuna eta inserita")
-        }
         // ***Dicharo prezzoBiglietto e prezzoBilgietto con relativo sconto ***
     
-        let prezzoBiglietto = km * 0.21;
-        let sconto20percento = prezzoBiglietto - (prezzoBiglietto * 20 / 100);
-        let sconto40percento = prezzoBiglietto - (prezzoBiglietto * 40 / 100);
-        let euro = "€"
-        
-            // ***Condizione***
-        
-        
+            let prezzoBiglietto = km * 0.21;
+            let sconto20percento = prezzoBiglietto - (prezzoBiglietto * 20 / 100);
+            let sconto40percento = prezzoBiglietto - (prezzoBiglietto * 40 / 100);
+            let euro = "€"
+            
+            
+                // ***Condizione***
+            
+            
 
-        if (age < 18) {
-           total = sconto20percento.toFixed(2) + euro;
-        } else if (age > 65) {
-            total = sconto40percento.toFixed(2) + euro;
-        } else {
-            total = prezzoBiglietto.toFixed(2) + euro;
-        }       
-        
-    }
+            if (age < 18) {
+                total = sconto20percento.toFixed(2) + euro;
+                age = ("Under 18");
+            } else if (age > 65) {
+                total = sconto40percento.toFixed(2) + euro;
+                age = ("Over 65");
+            } else {
+                total = prezzoBiglietto.toFixed(2) + euro;
+                age = ("Tariffa Standard");
 
-    document.getElementById("ticketName").innerText= name
-    document.getElementById("ticketKm").innerText= km
-    document.getElementById("ticketAge").innerText= age
-    document.getElementById("ticketPrice").innerText= total
+            } 
+            
 
-    
+            document.getElementById("ticketName").innerText= name
+            // document.getElementById("ticketKm").innerText= km
+            document.getElementById("ticketAge").innerText= age
+            document.getElementById("ticketPrice").innerText= total
+            document.getElementById("carrozza").innerText= carrozza
+            document.getElementById("codice").innerText= codice
+            
+        }   
 
     
 })
